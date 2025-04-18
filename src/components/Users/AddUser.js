@@ -1,5 +1,3 @@
-// Write your code at relevant places in the code below:
-
 import React, { useState } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
@@ -11,18 +9,13 @@ const AddUser = () => {
 
   const addUserHandler = (event) => {
     event.preventDefault();
-    const username = enteredUsername.tirm();
-    const age = enteredAge.trim();
-
-    if (username.length === 0 || age.length === 0) {
+    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
       return;
     }
-    const ageNumber = +age;
-    if (ageNumber <= 0) {
+    if (+enteredAge < 1) {
       return;
     }
-    console.log(username, ageNumber);
-
+    console.log(enteredUsername, enteredAge);
     setEnteredUsername("");
     setEnteredAge("");
   };
