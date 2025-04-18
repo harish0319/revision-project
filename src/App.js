@@ -1,20 +1,19 @@
-// Write your code at relevant places in the code below:
-
 import React, { useState } from "react";
 import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
 
 function App() {
-  const [ usersList, setUserList ]   = useState([]);
+  const [usersList, setUsersList] = useState([]);
 
-  const addUserHandler = (uName, uAge) => { 
-    setUserList((prevUsersList) => { 
+  const addUserHandler = (uName, uAge) => {
+    setUsersList((prevUsersList) => {
       return [
         ...prevUsersList,
         { name: uName, age: uAge, id: Math.random().toString() },
       ];
     });
   };
+
   return (
     <div>
       <AddUser onAddUser={addUserHandler} />
